@@ -1,0 +1,215 @@
+// Define primary and secondary colors
+$primary-color: #a456a5; // Main color
+$secondary-color: #FFFFFF; // White
+$background-color: #F5F5F5; // Light gray
+$input-background-color: #FFFFFF; // White for input fields
+$input-border-color: #CCCCCC; // Light gray border for inputs
+$input-focus-color: #66BB6A; // Light green for focused input fields
+//$primary-color: #007bff; // Example primary color
+$disabled-opacity: 0.6;
+
+// Define typography
+$font-family: 'Aptos', sans-serif;
+mat-card-title {
+    text-align: center;
+    font-size: 24px;
+  margin-bottom: 20px;
+}
+
+// Container styling
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: $background-color;
+}
+
+// Card styling
+mat-card {
+    max-width: 400px;
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: $secondary-color;
+
+    @media screen and (max-width: 500px){
+           max-width: 90%;
+    }
+             
+    }
+
+
+// mat-card-title {
+//         font-family: $font-family;
+//         font-size: 24px;
+//         color: $primary-color;
+//         text-align: center;
+        
+//     }
+
+mat-card-title {
+    font-family: 'Aptos', sans-serif; // Or your preferred font
+    font-size: 28px; // Adjust font size as needed
+    font-weight: bold;
+    color: $primary-color;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+
+// Form styling
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+
+    .file-upload-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+
+
+      .file-upload-label{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 24px;
+        background-color: #a456a5;
+        color: white;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: $background-color 0.3s;
+
+
+        span{
+          margin-right: 8px;
+        }
+
+        mat-icon{
+          font-size: 20px;
+        }
+      }
+    }
+
+    .image-preview{
+      display: flex;
+      justify-content: center;
+      margin-top: 16px;
+
+      .circle-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        overflow: hidden;
+        position: relative;
+        background-color: lightgray;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+
+        .preview-image{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    mat-form-field {
+        width: 100%;
+        
+        mat-label {
+            font-family: $font-family;
+            color: $primary-color;
+        }
+        
+        .mat-form-field-infix {
+            padding: 0;
+        }
+        
+        .mat-input-element {
+            background-color: $input-background-color;
+            border: 1px solid $input-border-color;
+            border-radius: 5px;
+            padding: 10px;
+            font-family: $font-family;
+            font-size: 16px;
+            color: #333;
+            
+            &:focus {
+                border-color: $input-focus-color;
+                box-shadow: 0 0 5px rgba(102, 187, 106, 0.5);
+            }
+        }
+        
+        .mat-form-field-appearance-fill .mat-form-field-flex {
+            background-color: transparent;
+        }
+    }
+}
+
+// .button {
+//     width: 100%;
+//     font-family: $font-family;
+//     color: #FFFFFF;
+//     background-color: blueviolet;
+// }
+// .button {
+//     &.inactive{
+//         // background-color: white;
+//         // color: #333;
+//         opacity: $disabled-opacity;
+//     cursor: not-allowed;
+//     }
+//     font-family: 'Aptos', sans-serif;
+//     color: black;
+//     background-color:#a456a5; // Change this to your desired color
+//      // Change this to your desired text color
+     
+//   }
+// button.active{
+//     font-weight: 600;
+// }
+.button {
+    font-family: 'Aptos', sans-serif;
+    color: white;
+    background-color: $primary-color;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+    transition: background-color 0.3s ease-in-out;
+  
+    &.inactive {
+      opacity: $disabled-opacity;
+      cursor: not-allowed;
+    }
+  
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  
+    &:active {
+      background-color: darken($primary-color, 20%);
+    }
+  }
+  h2{
+    text-align: center;
+  }
+
+// Responsive design
+@media (max-width: 480px) {
+    mat-card {
+        width: 100%;
+        padding: 10px;
+    }
+}
+mat-card-actions {
+    display: flex;
+    justify-content: center;
+  }

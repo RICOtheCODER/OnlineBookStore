@@ -1,0 +1,368 @@
+// // Define primary and secondary colors
+// $primary-color: #a456a5; // Main color
+// $secondary-color: #FFFFFF; // White
+// $background-color: #F5F5F5; // Light gray
+// $input-background-color: #FFFFFF; // White for input fields
+// $input-border-color: #CCCCCC; // Light gray border for inputs
+// $input-focus-color: #66BB6A; // Light green for focused input fields
+// $disabled-opacity: 0.6;
+
+// // Define typography
+// $font-family: 'Aptos', sans-serif;
+// $font-weight-normal: 400;
+// $font-weight-bold: 700;
+// $heading-color: #2C2C2C; // Refined dark gray for headings
+
+// // General Container Styling
+// .product-List {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     align-items: flex-start;
+//     gap: 20px; // Space between cards
+//     padding: 20px;
+//     background-color: $background-color;
+// }
+
+// // Card Styling
+// .book-card {
+//     max-width: 400px;
+//     width: 100%;
+//     padding: 30px;
+//     border-radius: 12px; 
+//     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+//     background-color: $secondary-color;
+//     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+//     &:hover {
+//         transform: translateY(-5px);
+//         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+//     }
+
+//     @media (max-width: 500px) {
+//         max-width: 90%;
+//         padding: 20px;
+//     }
+// }
+
+// // Image Styling
+// .book-image img {
+//     width: 100%;
+//     height: auto;
+//     border-radius: 8px; // Slightly rounded corners for images
+//     margin-bottom: 20px;
+// }
+
+// // Book Details Styling
+// .book-details {
+//     text-align: center;
+//     margin-bottom: 20px;
+// }
+
+// .book-name {
+//     font-family: $font-family;
+//     font-size: 24px;
+//     font-weight: $font-weight-bold;
+//     color: $heading-color;
+//     margin-bottom: 10px;
+// }
+
+// .product-description {
+//     font-family: $font-family;
+//     font-size: 16px;
+//     font-weight: $font-weight-normal;
+//     color: #666666;
+//     margin-bottom: 20px;
+// }
+
+// .info-row {
+//     display: flex;
+//     justify-content: space-between;
+//     font-family: $font-family;
+//     font-size: 16px;
+//     color: $heading-color;
+//     margin-bottom: 10px;
+// }
+
+// .info-label {
+//     font-weight: $font-weight-bold;
+// }
+
+// .info-value {
+//     font-weight: $font-weight-normal;
+// }
+
+// // Divider Styling
+// mat-divider {
+//     margin: 20px 0;
+// }
+
+// // Button Styling
+// .button {
+//     font-family: $font-family;
+//     color: $secondary-color;
+//     background-color: $primary-color;
+//     border: none;
+//     border-radius: 5px;
+//     padding: 14px 22px;
+//     cursor: pointer;
+//     font-weight: $font-weight-bold;
+//     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+//     transition: background-color 0.3s ease, transform 0.3s ease;
+
+//     &.inactive {
+//         opacity: $disabled-opacity;
+//         cursor: not-allowed;
+//     }
+
+//     &:hover {
+//         background-color: darken($primary-color, 10%);
+//         transform: translateY(-2px);
+//     }
+
+//     &:active {
+//         background-color: darken($primary-color, 20%);
+//         transform: translateY(0);
+//     }
+
+//     @media (max-width: 480px) {
+//         width: 100%; // Full-width on small screens
+//     }
+// }
+
+// // Responsive Design Enhancements
+// @media (max-width: 480px) {
+//     .book-card {
+//         width: 100%;
+//         padding: 15px;
+//     }
+
+//     .button {
+//         width: 100%; // Full-width buttons on small screens
+//     }
+// }
+// Define primary and secondary colors
+$primary-color: #a456a5; // Main color
+$secondary-color: #FFFFFF; // White
+$background-color: #F5F5F5; // Light gray
+$input-background-color: #FFFFFF; // White for input fields
+$input-border-color: #CCCCCC; // Light gray border for inputs
+$input-focus-color: #66BB6A; // Light green for focused input fields
+$disabled-opacity: 0.6;
+
+// Define typography
+$font-family: 'Aptos', sans-serif;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$heading-color: #2C2C2C; // Refined dark gray for headings
+
+// General Container Styling
+.product-List {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; // Space between cards
+    padding: 20px;
+    background-color: $background-color;
+}
+
+// Card Styling
+.book-card {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 12px; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    background-color: $secondary-color;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden; // Prevent content overflow
+
+    &:hover {
+        transform: translateY(-10px); // Elevate card on hover
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); // Increase shadow for more depth
+        background-color: lighten($secondary-color, 5%); // Lighten background on hover
+    }
+
+    @media (max-width: 500px) {
+        max-width: 90%;
+        padding: 15px;
+    }
+}
+
+// Image Styling
+.book-image {
+    overflow: hidden;
+    border-radius: 8px; // Slightly rounded corners for images
+    margin-bottom: 15px;
+
+    img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease; // Smooth image scale on hover
+
+        &:hover {
+            transform: scale(1.05); // Slight zoom effect on hover
+        }
+    }
+}
+
+// Book Details Styling
+.book-details {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.book-name {
+    font-family: $font-family;
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    color: $heading-color;
+    margin-bottom: 10px;
+    transition: color 0.3s ease; // Smooth color transition on hover
+
+    &:hover {
+        color: $primary-color; // Highlight color on hover
+    }
+}
+
+.product-description {
+    font-family: $font-family;
+    font-size: 16px;
+    font-weight: $font-weight-normal;
+    color: #666666;
+    margin-bottom: 20px;
+    line-height: 1.5; // Improve readability
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: $font-family;
+    font-size: 16px;
+    color: $heading-color;
+    margin-bottom: 10px;
+}
+
+.info-label {
+    font-weight: $font-weight-bold;
+}
+
+.info-value {
+    font-weight: $font-weight-normal;
+}
+
+// Divider Styling
+mat-divider {
+    margin: 20px 0;
+}
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px; // Space between the buttons
+    padding: 20px; // Padding around the div
+    background-color: #F8F8F8; // Light background for the div
+    border-radius: 8px; // Rounded corners for a modern look
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); // Soft shadow for depth
+
+// Button Styling
+.update-button {
+    font-family: $font-family;
+    color: red;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 14px 22px;
+    cursor: pointer;
+    font-weight: $font-weight-bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &.inactive {
+        opacity: $disabled-opacity;
+        cursor: not-allowed;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    @media (max-width: 480px) {
+        width: 100%; // Full-width on small screens
+    }
+}
+.faq-button {
+    font-family: $font-family;
+    color: red;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 14px 22px;
+    cursor: pointer;
+    font-weight: $font-weight-bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &.inactive {
+        opacity: $disabled-opacity;
+        cursor: not-allowed;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    @media (max-width: 480px) {
+        width: 100%; // Full-width on small screens
+    }
+}
+.delete-button {
+    font-family: $font-family;
+    color: ruby;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 14px 22px;
+    cursor: pointer;
+    font-weight: $font-weight-bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &.inactive {
+        opacity: $disabled-opacity;
+        cursor: not-allowed;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    @media (max-width: 480px) {
+        width: 100%; // Full-width on small screens
+    }
+}
+}
+// Responsive Design Enhancements
+@media (max-width: 480px) {
+    .book-card {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .button {
+        width: 100%; // Full-width buttons on small screens
+    }
+}

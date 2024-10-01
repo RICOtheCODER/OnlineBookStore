@@ -1,0 +1,48 @@
+
+<form [formGroup]="searchBookForm" class="search-form" (submit)="submitForm()">
+    <mat-form-field appearance="outline" class="search-input">
+        <mat-label>Enter keyword to search</mat-label>
+        <input matInput formControlName="title">
+
+        <button class="search-button" mat-button matSuffix color="primary" >
+              <mat-icon>search</mat-icon>
+        </button>
+    </mat-form-field>
+
+</form>
+
+<div class="product-List">
+    <mat-card class="book-card" *ngFor="let book of books">
+        <div class="book-image">
+               <img [src]="book.processedImg" alt="book-image">
+        </div>
+        <div class="book-details">
+            <h2 class="book-name">{{book.name}}</h2>
+            <p class="product-description">{{book.description}}</p>
+
+            <mat-divider></mat-divider>
+            <div class="info-row">
+                <span class="info-label">Price :</span>
+                <span class="info-value">${{book.price}}</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Category :</span>
+                <span class="info-value">{{book.categoryName}}</span>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div>
+            <div class="actions">
+                <button mat-raised-button color="primary" class="faq-button"
+                [routerLink]="'/admin/faq/' + book.id">FAQ</button>
+            <button mat-raised-button color="accent" class="update-button"
+                [routerLink]="'/admin/book/'+book.id">Update</button>
+            <button mat-raised-button color="warn" class="delete-button" (click)="deleteBook(book.id)">
+                Delete
+            </button>
+
+        
+            </div>
+        </div>
+    </mat-card>
+</div>

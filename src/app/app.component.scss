@@ -1,0 +1,36 @@
+
+
+
+.navbar{
+    font-family: 'Aptos', sans-serif;
+    color: black;
+    background-color: #a456a5;
+    display: flex;
+    align-items: center;
+    padding:0 16px;
+}
+.button {
+    font-family: 'Aptos', sans-serif;
+    background-color:#a456a5; // Change this to your desired color
+     // Change this to your desired text color
+  }
+  .spacer{
+    flex: 1;
+  }
+
+.navbar-brand{
+    
+    font-size: 35px;
+    font-weight: 700;
+    margin-right: 16px;
+    
+}
+
+
+button.active{
+    font-weight: 600;
+}
+
+.custom-toolbar{
+    background-color: #ff0000;
+}

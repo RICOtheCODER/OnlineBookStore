@@ -1,0 +1,100 @@
+// Variables
+$primary-color: #a456a5; // Main color
+$secondary-color: #FFFFFF; // White
+$background-color: #F5F5F5; // Light gray
+$input-background-color: #FFFFFF; // White for input fields
+$input-border-color: #CCCCCC; // Light gray border for inputs
+$input-focus-color: #66BB6A; // Light green for focused input fields
+$disabled-opacity: 0.6;
+$font-family: 'Aptos', sans-serif;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$heading-color: #2C2C2C; // Refined dark gray for headings
+
+// SCSS for the form
+.container {
+  background-color: $background-color;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+
+  mat-card {
+    background-color: $secondary-color;
+    padding: 20px;
+
+    mat-card-title {
+      font-family: $font-family;
+      font-weight: $font-weight-bold;
+      color: $heading-color;
+      margin-bottom: 20px;
+    }
+
+    mat-card-content {
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        mat-form-field {
+          width: 100%;
+          background-color: $input-background-color;
+
+          mat-label {
+            font-family: $font-family;
+            font-weight: $font-weight-normal;
+            color: $heading-color;
+          }
+
+          input {
+            font-family: $font-family;
+            font-weight: $font-weight-normal;
+            color: $heading-color;
+            border-color: $input-border-color;
+          }
+
+          mat-error {
+            font-family: $font-family;
+            font-weight: $font-weight-normal;
+            color: $primary-color;
+          }
+
+          &.mat-focused {
+            .mat-form-field-outline {
+              border-color: $input-focus-color;
+            }
+          }
+        }
+
+        .button-row {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+
+          .order-button {
+            background-color: $primary-color;
+            color: $secondary-color;
+            font-family: $font-family;
+            font-weight: $font-weight-bold;
+
+            &:disabled {
+              opacity: $disabled-opacity;
+            }
+          }
+
+          .close-button {
+            color: $primary-color;
+            border-color: $primary-color;
+            font-family: $font-family;
+            font-weight: $font-weight-normal;
+
+            &:hover {
+              background-color: rgba($primary-color, 0.1);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+// Variables
+$primary-color: #a456a5; // Main color
+$secondary-color: #FFFFFF; // White
+$background-color: #F5F5F5; // Light gray
+$input-background-color: #FFFFFF; // White for input fields
+$input-border-color: #CCCCCC; // Light gray border for inputs
+$input-focus-color: #66BB6A; // Light green for focused input fields
+$disabled-opacity: 0.6;
+$font-family: 'Aptos', sans-serif;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$heading-color: #2C2C2C; // Refined dark gray for headings
+.container {
+    background-color: $background-color;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: $font-family;
+    max-width: 600px;
+    margin: 0 auto;
+  
+    h2 {
+      color: $heading-color;
+      font-weight: $font-weight-bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  
+      .form-field {
+        width: 100%;
+  
+        mat-form-field {
+          width: 100%;
+  
+          textarea[matInput] {
+            background-color: $input-background-color;
+            border: 1px solid $input-border-color;
+            border-radius: 4px;
+            padding: 12px;
+            font-family: $font-family;
+            resize: vertical;
+            min-height: 100px;
+  
+            &:focus {
+              border-color: $input-focus-color;
+              box-shadow: 0 0 0 3px rgba($input-focus-color, 0.3);
+            }
+          }
+  
+          mat-label {
+            color: $heading-color;
+            font-weight: $font-weight-bold;
+          }
+  
+          mat-error {
+            color: $primary-color;
+            font-family: $font-family;
+          }
+        }
+      }
+  
+      button {
+        background-color: $primary-color;
+        color: $secondary-color;
+        font-weight: $font-weight-bold;
+        font-family: $font-family;
+        text-transform: uppercase;
+        padding: 12px 20px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+  
+        &:disabled {
+          opacity: $disabled-opacity;
+        }
+      }
+    }
+  }
+  

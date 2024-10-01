@@ -1,0 +1,161 @@
+// // Variables
+// $primary-color: #a456a5; // Main color
+// $secondary-color: #FFFFFF; // White
+// $background-color: #F5F5F5; // Light gray
+// $input-background-color: #FFFFFF; // White for input fields
+// $input-border-color: #CCCCCC; // Light gray border for inputs
+// $input-focus-color: #66BB6A; // Light green for focused input fields
+// $disabled-opacity: 0.6;
+// $font-family: 'Aptos', sans-serif;
+// $font-weight-normal: 400;
+// $font-weight-bold: 700;
+// $heading-color: #2C2C2C; // Refined dark gray for headings
+
+// .mat-elevation-z8 {
+//     background-color: $background-color;
+//     border-radius: 8px;
+//     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+//     font-family: $font-family;
+  
+//     .mat-header-cell {
+//       font-weight: $font-weight-bold;
+//       color: $heading-color;
+//       background-color: $primary-color;
+//       color: $secondary-color;
+//       padding: 16px;
+//       text-align: left;
+//       border-bottom: 2px solid darken($primary-color, 10%);
+//     }
+  
+//     .mat-cell {
+//       font-weight: $font-weight-normal;
+//       color: $heading-color;
+//       padding: 16px;
+//       border-bottom: 1px solid $input-border-color;
+  
+//       &:nth-child(2n) {
+//         background-color: lighten($background-color, 5%);
+//       }
+//     }
+  
+//     .mat-row:hover {
+//       background-color: lighten($primary-color, 40%);
+//     }
+  
+//     .mat-header-row {
+//       border-bottom: 2px solid $input-border-color;
+//     }
+  
+//     .mat-row {
+//       transition: background-color 0.3s ease;
+  
+//       &:nth-child(2n) {
+//         background-color: lighten($background-color, 5%);
+//       }
+//     }
+//   }
+
+$primary-color: #a456a5; // Main color
+$secondary-color: #FFFFFF; // White
+$background-color: #F5F5F5; // Light gray
+$input-background-color: #FFFFFF; // White for input fields
+$input-border-color: #CCCCCC; // Light gray border for inputs
+$input-focus-color: #66BB6A; // Light green for focused input fields
+$disabled-opacity: 0.6;
+$font-family: 'Aptos', sans-serif;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$heading-color: #2C2C2C; // Refined dark gray for headings
+
+
+// SCSS for the table within the card
+.container {
+  background-color: $background-color;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 100%;
+  margin: 0 auto;
+
+  mat-card {
+    background-color: $secondary-color;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    mat-card-content {
+      padding: 0;
+      
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: $font-family;
+        margin-bottom: 20px;
+
+        th, td {
+          text-align: left;
+          padding: 12px 15px;
+          border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+          background-color: $primary-color;
+          color: $secondary-color;
+          font-weight: $font-weight-bold;
+          font-size: 14px;
+          text-transform: uppercase;
+        }
+
+        td {
+          color: $heading-color;
+          font-weight: $font-weight-normal;
+          font-size: 14px;
+        }
+
+        tr {
+          &:hover {
+            background-color: lighten($primary-color, 45%);
+            transition: background-color 0.3s ease;
+          }
+        }
+      }
+
+      .mat-header-cell {
+        padding: 16px;
+        font-weight: $font-weight-bold;
+        color: $secondary-color;
+        background-color: $primary-color;
+      }
+
+      .mat-cell {
+        padding: 16px;
+        font-weight: $font-weight-normal;
+        color: $heading-color;
+      }
+
+      // Action button styling
+      .mat-menu-trigger {
+        background-color: $primary-color;
+        color: $secondary-color;
+        font-weight: $font-weight-bold;
+        padding: 6px 12px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+
+      .mat-menu-item {
+        color: $heading-color;
+        font-weight: $font-weight-normal;
+
+        &:hover {
+          background-color: lighten($primary-color, 45%);
+        }
+      }
+    }
+  }
+}
+
+  

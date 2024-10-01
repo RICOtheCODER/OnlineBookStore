@@ -1,0 +1,110 @@
+// Define primary and secondary colors
+$primary-color: #a456a5; // Main color
+$secondary-color: #FFFFFF; // White
+$background-color: #F5F5F5; // Light gray
+$input-background-color: #FFFFFF; // White for input fields
+$input-border-color: #CCCCCC; // Light gray border for inputs
+$input-focus-color: #66BB6A; // Light green for focused input fields
+$disabled-opacity: 0.6;
+
+// Define typography
+$font-family: 'Aptos', sans-serif;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$heading-color: #2C2C2C; // Refined dark gray for headings
+
+// Container Styling
+.container {
+  background-color: $background-color;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+
+  h2 {
+    font-family: $font-family;
+    font-weight: $font-weight-bold;
+    color: $primary-color;
+    margin-bottom: 20px;
+  }
+}
+
+// Form Field Styling
+.form-field {
+  width: 100%;
+  margin-bottom: 20px;
+
+  mat-form-field {
+    width: 100%;
+    font-family: $font-family;
+
+    .mat-form-field-outline {
+      border-color: $input-border-color;
+    }
+
+    .mat-form-field-label {
+      color: $heading-color;
+      font-weight: $font-weight-normal;
+    }
+
+    .mat-input-element {
+      background-color: $input-background-color;
+      font-family: $font-family;
+      font-weight: $font-weight-normal;
+    }
+
+    .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-outline {
+      border-color: $input-focus-color;
+    }
+
+    .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+      border-color: $input-focus-color;
+    }
+
+    .mat-error {
+      font-family: $font-family;
+      font-size: 12px;
+      color: lighten($primary-color, 20%);
+    }
+  }
+}
+
+// Button Styling
+button[type="submit"] {
+  width: 100%;
+  padding: 14px 22px;
+  font-family: $font-family;
+  font-weight: $font-weight-bold;
+  border-radius: 5px;
+  background-color: $primary-color;
+  color: $secondary-color;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: lighten($primary-color, 5%);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: $disabled-opacity;
+    cursor: not-allowed;
+  }
+}
+
+// Responsive Design Enhancements
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
+}

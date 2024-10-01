@@ -1,0 +1,242 @@
+// Theme Colors
+$primary-color: #a456a5; // Main color
+$secondary-color: #FFFFFF; // White
+$background-color: #F5F5F5; // Light gray
+$input-background-color: #FFFFFF; // White for input fields
+$input-border-color: #CCCCCC; // Light gray border for inputs
+$input-focus-color: #66BB6A; // Light green for focused input fields
+$disabled-opacity: 0.6;
+
+// Typography
+$font-family: 'Aptos', sans-serif;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$heading-color: #2C2C2C; // Refined dark gray for headings
+
+// Cart Container Styling
+.cart-container {
+  background-color: $background-color;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+// Cart Item Styling
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid $input-border-color;
+
+  &:last-child {
+    border-bottom: none; // Remove border for last item
+  }
+
+  .product-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .product-image img {
+      width: 100px;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    .product-details {
+        flex: 1;
+        display: flex;
+        flex-direction: column; // or row
+        gap: 20px; 
+
+      .item-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1;
+        display: flex;
+        flex-direction: row; // or row
+        gap: 20px
+      }
+
+      .item-name {
+        font-family: $font-family;
+        font-weight: $font-weight-bold;
+        font-size: 18px;
+        color: $heading-color;
+        transition: color 0.3s ease;
+
+        &.highlight {
+          color: $primary-color; // Highlight color for selected items
+        }
+      }
+
+      .item-price {
+        font-family: $font-family;
+        font-weight: $font-weight-normal;
+        font-size: 16px;
+        color: $heading-color;
+      }
+
+      .quantity-controls {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        .quantity {
+          font-family: $font-family;
+          font-weight: $font-weight-bold;
+          font-size: 16px;
+        }
+
+        button {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+
+          mat-icon {
+            color: $primary-color;
+          }
+
+          &:disabled mat-icon {
+            color: lighten($primary-color, 30%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.container {
+  background-color: $background-color;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: $font-family;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 16px;
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  input[matInput] {
+    background-color: $input-background-color;
+    border: 1px solid $input-border-color;
+    border-radius: 4px;
+    padding: 8px;
+    font-family: $font-family;
+
+    &:focus {
+      border-color: $input-focus-color;
+      box-shadow: 0 0 0 3px rgba($input-focus-color, 0.3);
+    }
+  }
+
+  mat-error {
+    color: $primary-color;
+    font-family: $font-family;
+  }
+}
+
+button {
+  background-color: $primary-color;
+  color: $secondary-color;
+  font-weight: $font-weight-bold;
+  font-family: $font-family;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+
+  &:disabled {
+    opacity: $disabled-opacity;
+  }
+}
+
+
+// Total Price Styling
+.total-price {
+  font-family: $font-family;
+  font-weight: $font-weight-bold;
+  font-size: 20px;
+  color: $heading-color;
+  margin: 20px 0;
+  text-align: right;
+}
+
+// Button Styling
+.button {
+  width: 100%;
+  font-family: $font-family;
+  font-weight: $font-weight-bold;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: $primary-color;
+  color: $secondary-color;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: lighten($primary-color, 5%);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Empty Cart Styling
+.empty-cart {
+  text-align: center;
+  color: $heading-color;
+  font-family: $font-family;
+  font-size: 18px;
+  margin-top: 50px;
+
+  .icon {
+    font-size: 40px;
+    color: $primary-color;
+    margin-bottom: 10px;
+  }
+}
+
+// Responsive Design Enhancements
+@media (max-width: 480px) {
+  .cart-item .product-info {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .product-image img {
+      width: 80px;
+    }
+
+    .item-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .item-price,
+    .quantity-controls {
+      margin-top: 10px;
+    }
+  }
+
+  .total-price {
+    font-size: 18px;
+  }
+}
