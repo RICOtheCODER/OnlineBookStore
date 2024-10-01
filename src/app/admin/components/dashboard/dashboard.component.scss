@@ -174,41 +174,105 @@ $heading-color: #2C2C2C; // Refined dark gray for headings
         padding: 15px;
     }
 }
-
-// Search Input Styling
-.search-input {
-    width: 100%;
-    max-width: 600px;
-    background-color: $input-background-color;
+// Search form styling
+.search-form {
+    display: flex;
+    flex-direction: column; // Stack elements vertically
+    align-items: center; // Center elements horizontally
+    justify-content: center; // Center elements vertically
+    padding: 20px;
+    background-color: $background-color;
     border-radius: 8px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; // Adds spacing between input and button
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    min-height: 200px; // Ensures form occupies enough vertical space for centering
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 
-    mat-label {
-        color: $heading-color;
-        font-family: $font-family;
-        font-weight: $font-weight-bold;
+    &:hover {
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
     }
 
-    input {
-        padding: 12px;
-        font-family: $font-family;
-        font-size: 16px;
-        color: $heading-color;
-        border: none;
-        border-radius: 8px;
-        transition: box-shadow 0.3s ease;
-
-        &:focus {
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-            border-color: $input-focus-color;
-        }
-    }
-
-    mat-icon {
-        color: $primary-color;
+    @media (max-width: 480px) {
+        padding: 15px;
     }
 }
+
+// Form input styling
+.search-form input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    border: 1px solid $input-border-color;
+    border-radius: 4px;
+    background-color: $input-background-color;
+    font-family: $font-family;
+    font-weight: $font-weight-normal;
+    color: $text-color;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+        border-color: $input-focus-color;
+        box-shadow: 0px 0px 5px rgba($input-focus-color, 0.5);
+        outline: none;
+    }
+
+    &::placeholder {
+        color: lighten($input-border-color, 20%);
+    }
+
+    &:disabled {
+        opacity: $disabled-opacity;
+    }
+}
+
+// Typography improvements
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family;
+    font-weight: $font-weight-bold;
+    color: $heading-color;
+}
+
+p {
+    font-family: $font-family;
+    font-weight: $font-weight-normal;
+    color: $text-color;
+    margin-bottom: 16px;
+}
+// Search Input Styling
+// .search-input {
+//     width: 100%;
+//     max-width: 600px;
+//     background-color: $input-background-color;
+//     border-radius: 8px;
+//     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+//     margin-bottom: 20px; // Adds spacing between input and button
+
+//     mat-label {
+//         color: $heading-color;
+//         font-family: $font-family;
+//         font-weight: $font-weight-bold;
+//     }
+
+//     input {
+//         padding: 12px;
+//         font-family: $font-family;
+//         font-size: 16px;
+//         color: $heading-color;
+//         border: none;
+//         border-radius: 8px;
+//         transition: box-shadow 0.3s ease;
+
+//         &:focus {
+//             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+//             border-color: $input-focus-color;
+//         }
+//     }
+
+//     mat-icon {
+//         color: $primary-color;
+//     }
+// }
 
 // Search Button Styling
 button.search-button {
